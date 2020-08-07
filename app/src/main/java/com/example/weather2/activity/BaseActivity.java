@@ -1,12 +1,9 @@
 package com.example.weather2.activity;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.weather2.util.StatusBarUtil;
 
 public class BaseActivity extends AppCompatActivity {
 

@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
  * 实现android沉浸式
  * Created by HeChenghuan on 2016/10/11.
  */
-public class StatusBarUtil {
+public class StatusBarUtilLocal {
 
     /**
      * 设置系统状态栏颜色与标题栏颜色一致，达到沉浸式的效果
