@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportHeight="300.0"
+    android:viewportWidth="300.0">
+
+    <path android:name="edge"
+        android:pathData="h300,0
+        v0,300
+        h-300,0
+        v0,-300"
+        android:strokeColor="@android:color/holo_red_dark"
+        android:strokeWidth="1"/>
+
+    <path
+        android:name="oval"
+        android:fillColor="#8F0505"
+        android:pathData="
+        M0,75
+a75,75 0 1,1 150,0
+a75,75 0 1,1 -150,0"
+        android:strokeColor="#00000000"/>
+</vector>
