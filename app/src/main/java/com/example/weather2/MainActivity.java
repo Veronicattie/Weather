@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,11 +18,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weather2.adapter.WeatherAdapter;
-import com.example.weather2.module.User;
+import com.example.weather2.fragment.HomeFragment;
+import com.example.weather2.module.WeatherDetail;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
@@ -45,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
-    List<User> data;
+//    @BindView(R.id.recyclerView)
+//    RecyclerView recyclerView;
+    List<WeatherDetail> data;
 
     @BindView(R.id.coordinator)
     CoordinatorLayout coordinator;
@@ -61,13 +65,17 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout backdrop;
     @BindView(R.id.collapsingToolbarLayout)
     CollapsingToolbarLayout collapsingToolbarLayout;
+    @BindView(R.id.main_frame)
+    FrameLayout mainFrame;
 
+    private FragmentManager supportFragmentManager;
+    private FragmentTransaction fragmentTransaction;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        initData();
+
         init();
     }
 
@@ -84,10 +92,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //recyclerview init
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        WeatherAdapter weatherAdapter = new WeatherAdapter(data);
-        recyclerView.setAdapter(weatherAdapter);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        WeatherAdapter weatherAdapter = new WeatherAdapter(data);
+//        recyclerView.setAdapter(weatherAdapter);
 
         //toolbar init
         setSupportActionBar(toolbar);
@@ -108,38 +116,15 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("长沙");
         collapsingToolbarLayout.setTitle("长沙");
 
-
+        //FrameLayout
+        //获取管理者
+        supportFragmentManager = getSupportFragmentManager();
+        //开启事务
+        fragmentTransaction =  supportFragmentManager.beginTransaction();
+        //添加fragment上去
+        fragmentTransaction.add(R.id.main_frame, new HomeFragment()).commit();
     }
 
-    private void initData() {
-        data = new ArrayList<User>();
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-        data.add(new User("张三"));
-    }
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
