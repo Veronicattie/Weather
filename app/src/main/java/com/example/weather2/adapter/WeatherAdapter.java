@@ -32,6 +32,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         WeatherDetail user = mUserList.get(position);
         holder.tv.setText(user.getName());
+        holder.tvValue.setText(user.getValue());
     }
 
     @Override

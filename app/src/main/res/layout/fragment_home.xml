@@ -114,7 +114,7 @@
                 <com.example.weather2.view.PollutionView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:rankValue="50"/>
+                    app:rankValue="350"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

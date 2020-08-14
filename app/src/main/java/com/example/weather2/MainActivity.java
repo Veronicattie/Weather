@@ -3,6 +3,7 @@ package com.example.weather2;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weather2.adapter.WeatherAdapter;
 import com.example.weather2.fragment.HomeFragment;
+import com.example.weather2.http.GetRequest_Interface;
+import com.example.weather2.module.TodayWeather;
 import com.example.weather2.module.WeatherDetail;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
@@ -33,6 +36,12 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         init();
+
     }
 
     private void init() {
@@ -126,24 +136,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main,menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-
-    //    @OnClick({R.id.btn_one, R.id.btn_two, R.id.btn_three})
-//    public void onViewClicked(View view) {
-//
-//        switch (view.getId()) {
-//            case R.id.btn_one:
-//                break;
-//            case R.id.btn_two:
-//                break;
-//            case R.id.btn_three:
-//                break;
-//        }
-//    }
 
 
 }

@@ -9,4 +9,11 @@
     <color name="lineColor">#E6E6E6</color>
     <color name="whiteColor">#FFFFFF</color>
     <color name="textColorDarkerGray">@android:color/darker_gray</color>
+
+    <color name="pollutionColor1">#60c2cb</color>
+    <color name="pollutionColor2">#6fb452</color>
+    <color name="pollutionColor3">#f2ac00</color>
+    <color name="pollutionColor4">#E02918</color>
+    <color name="pollutionColor5">#A50A54</color>
+    <color name="pollutionColor6">#8A040F</color>
 </resources>
